@@ -9,7 +9,7 @@ import tek.BDD.pages.SignInPage;
 
 public class securityTestStep extends seleniumUtility{
     @When("user click on sign in link")
-    public void user_click_on_sign_in_link() {
+    public void UserClickOnSignInBtn() {
         clickOnElement(HomePage.SING_IN_LINK);
 
 
@@ -17,10 +17,10 @@ public class securityTestStep extends seleniumUtility{
     @When("user enter {string} and {string} then click on login")
     public void userEnterUserNameAndPassword(String userName, String password) {
        sendText(SignInPage.INPUT_EMAIL,userName);
-       sendText(SignInPage.INPUT_PASSWORD,password);
+      sendText(SignInPage.INPUT_PASSWORD,password);
     }
     @Then("validate user is in sign in page")
-    public void validate_user_is_in_sign_in_page() {
+    public void ValidateUserInSignInPage() {
         String login=getText(By.className("login__subtitle"));
         Assert.assertEquals("Sign in",login);
 
@@ -32,8 +32,9 @@ public class securityTestStep extends seleniumUtility{
         clickOnElement(SignInPage.LOG_IN_BTN);
 
     }
+
     @Then("user should be able to see account link")
-    public void user_should_be_able_to_see_account_link() {
+    public void UserSeeAccountCreationLink() {
     boolean AccountElement=isElementDisplayed(HomePage.ACCOUNT_LINK);
     Assert.assertTrue(AccountElement);
 
