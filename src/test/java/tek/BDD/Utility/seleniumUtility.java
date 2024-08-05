@@ -1,5 +1,6 @@
 package tek.BDD.Utility;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,6 +27,12 @@ public class seleniumUtility extends BaseSetup {
     public String getText(By locator){
 
         return visibilityOfElement(locator).getText();
+    }
+    public boolean isElementEnabled(By locator){
+       return visibilityOfElement(locator).isEnabled();
+    }
+    public boolean isElementDisplayed(By locator){
+        return visibilityOfElement(locator).isDisplayed();
     }
 
 

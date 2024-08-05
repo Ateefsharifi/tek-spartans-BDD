@@ -18,10 +18,16 @@ public class SetUpStep extends seleniumUtility {
         Assert.assertEquals("TEKSCHOOL",txt);
     }
 
-    @Then("close the browser")
-    public void closeTheBrowser(){
-       quitBrowser();
-    }
+   // @Then("close the browser")
+   // public void closeTheBrowser() {
+   //     quitBrowser();
+    //}
 
+    @Then("validate sign in button is enabled")
+    public void validateSignInButton(){
+        boolean signInIsEnabled=isElementEnabled(By.id("signinLink"));
+        Assert.assertTrue(signInIsEnabled);
+
+    }
 
 }

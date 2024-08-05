@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/features/setUpTest.feature",glue = "tek.BDD.SetupStep")
+@CucumberOptions(features = "src/test/resources/features/securityTest.feature",glue = "tek.BDD.SetupStep",dryRun = true)
 
 
 public class runner {
