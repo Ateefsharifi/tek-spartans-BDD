@@ -14,16 +14,16 @@ public class securityTestStep extends seleniumUtility{
 
 
     }
-    @When("user enter {string} and {string} then click on login")
-    public void userEnterUserNameAndPassword(String userName, String password) {
-       sendText(SignInPage.INPUT_EMAIL,userName);
-      sendText(SignInPage.INPUT_PASSWORD,password);
-    }
     @Then("validate user is in sign in page")
     public void ValidateUserInSignInPage() {
         String login=getText(By.className("login__subtitle"));
         Assert.assertEquals("Sign in",login);
 
+    }
+    @When("user enter \"Example@gmail.com\" and \"Test@12345\" then click on login")
+    public void userEnterUserNameAndPassword(String userName, String password) {
+        sendText(SignInPage.INPUT_EMAIL,userName);
+        sendText(SignInPage.INPUT_PASSWORD,password);
     }
     @When("user enter username and password and click on login")
     public void user_enter_username_and_password_and_click_on_login() {
